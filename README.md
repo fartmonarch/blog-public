@@ -166,4 +166,13 @@ tg 群：1月1号，才创建的 tg 群 https://t.me/public_blog_2025
 
 <!-- 测试 -->
 
-webhook部署2222111111
+我的 Next.js 项目云服务器部署 & 自动更新完整流程
+环境准备：安装 Node.js/pnpm/Git/webhook/PM2 + Nginx；
+Nginx 配置：反向代理 80 端口到 Next.js（3000）、webhook（9000），配置静态资源缓存；
+代码部署：克隆 GitHub 代码到 /var/www/blog-public → pnpm install → pnpm build；
+后台运行服务：
+PM2 启动 Next.js：pm2 start npm --name "blog" -- run "start"（3000 端口）；
+PM2 启动 webhook：pm2 start webhook --name webhook -- -hooks /var/www/blog-public/hooks.json -port 9000（9000 端口）；
+配置 PM2/Nginx 开机自启：pm2 save && pm2 startup + systemctl enable nginx；
+GitHub WebHook 配置：Payload URL 填 http://你的域名/IP/hooks/deploy（Nginx 80 端口），触发推送事件；
+自动更新链路：本地推送 → GitHub → Nginx 转发 → webhook 触发脚本 → 拉取代码 / 重构 → PM2 重启服务 → Nginx 对外提供访问。
