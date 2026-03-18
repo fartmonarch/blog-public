@@ -178,3 +178,4 @@ GitHub WebHook 配置：Payload URL 填 http://你的域名/IP/hooks/deploy（Ng
 自动更新链路：本地推送 → GitHub → Nginx 转发 → webhook 触发脚本 → 拉取代码 / 重构 → PM2 重启服务 → Nginx 对外提供访问。
 
 现在修改了build的构建代码
+和next.config.ts的代码
