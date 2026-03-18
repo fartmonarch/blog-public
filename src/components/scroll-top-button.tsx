@@ -11,27 +11,26 @@ type ScrollTopButtonProps = {
 }
 
 export function ScrollTopButton({ className, delay }: ScrollTopButtonProps) {
-	const [show, setShow] = useState(false)
-	const [active, setActive] = useState(false)
-	useEffect(() => {
-		setTimeout(() => setShow(true), delay || 1000)
-	}, [delay])
+  const [show, setShow] = useState(false)
+  const [active, setActive] = useState(false)
 
-	useEffect(() => {
-		const handleScroll = () => {
-			setActive(window.scrollY > 200)
-		}
-		handleScroll()
-		window.addEventListener('scroll', handleScroll, { passive: true })
-		return () => window.removeEventListener('scroll', handleScroll)
-	}, [])
+  useEffect(() => {
+    setTimeout(() => setShow(true), delay || 1000)
+  }, [delay])
 
-	if (!show || !active) return null
+  useEffect(() => {
+    const handleScroll = () => setActive(window.scrollY > 200)
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
-	const handleClick = useCallback(() => {
-		window.scrollTo({ top: 0, behavior: 'smooth' })
-		setTimeout(() => setActive(false), 1000)
-	}, [])
+  const handleClick = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    setTimeout(() => setActive(false), 1000)
+  }, [])
+
+  if (!show || !active) return null
 
 	return (
 		<motion.button
