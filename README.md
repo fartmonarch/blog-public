@@ -176,3 +176,5 @@ PM2 启动 webhook：pm2 start webhook --name webhook -- -hooks /var/www/blog-pu
 配置 PM2/Nginx 开机自启：pm2 save && pm2 startup + systemctl enable nginx；
 GitHub WebHook 配置：Payload URL 填 http://你的域名/IP/hooks/deploy（Nginx 80 端口），触发推送事件；
 自动更新链路：本地推送 → GitHub → Nginx 转发 → webhook 触发脚本 → 拉取代码 / 重构 → PM2 重启服务 → Nginx 对外提供访问。
+
+现在修改了build的构建代码
