@@ -42,24 +42,24 @@
 	"currentBackgroundImageId": "",
 	"socialButtons": [
 		{
-			"id": "github",
-			"type": "github",
-			"value": "https://github.com/fartmonarch",
-			"label": "Github",
-			"order": 1
-		},
-		{
 			"id": "email",
 			"type": "email",
 			"value": "2639555042@qq.com",
 			"label": "",
-			"order": 2
+			"order": 1
 		},
 		{
 			"id": "button-1773821526134",
 			"type": "wechat",
 			"value": "guo2639555042",
 			"label": "",
+			"order": 2
+		},
+		{
+			"id": "github",
+			"type": "github",
+			"value": "https://github.com/fartmonarch",
+			"label": "Github",
 			"order": 3
 		}
 	],
