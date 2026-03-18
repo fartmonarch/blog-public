@@ -46,14 +46,14 @@
 			"type": "github",
 			"value": "https://github.com/fartmonarch",
 			"label": "Github",
-			"order": 3
+			"order": 1
 		},
 		{
 			"id": "email",
 			"type": "email",
 			"value": "2639555042@qq.com",
 			"label": "",
-			"order": 1
+			"order": 2
 		}
 	],
 	"clockShowSeconds": true,
