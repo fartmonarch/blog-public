@@ -2,6 +2,8 @@
 
 import useSWR from 'swr'
 
+const EMPTY_CATEGORIES: string[] = [];
+
 export type CategoriesConfig = {
 	categories: string[]
 }
@@ -28,7 +30,7 @@ export function useCategories() {
 	})
 
 	return {
-		categories: data?.categories ?? [],
+		categories: data?.categories ?? EMPTY_CATEGORIES,
 		loading: isLoading,
 		error
 	}
