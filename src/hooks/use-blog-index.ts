@@ -1,6 +1,7 @@
 import useSWR from 'swr'
 import { useAuthStore } from '@/hooks/use-auth'
 import type { BlogIndexItem } from '@/app/blog/types'
+import { useMemo } from 'react'; // 添加引入
 
 export type { BlogIndexItem } from '@/app/blog/types'
 
@@ -17,22 +18,26 @@ const fetcher = async (url: string) => {
 }
 
 export function useBlogIndex() {
-	const { isAuth } = useAuthStore()
-	const { data, error, isLoading } = useSWR<BlogIndexItem[]>('/blogs/index.json', fetcher, {
-		revalidateOnFocus: false,
-		revalidateOnReconnect: true
-	})
+    const { isAuth } = useAuthStore()
+    const { data, error, isLoading } = useSWR<BlogIndexItem[]>('/blogs/index.json', fetcher, {
+        revalidateOnFocus: false,
+        revalidateOnReconnect: true
+    })
 
-	let result = data || []
-	if (!isAuth) {
-		result = result.filter(item => !item.hidden)
-	}
+    // 使用 useMemo 缓存过滤后的数组
+    const items = useMemo(() => {
+        const result = data || [];
+        if (!isAuth) {
+            return result.filter(item => !item.hidden);
+        }
+        return result;
+    }, [data, isAuth]);
 
-	return {
-		items: result,
-		loading: isLoading,
-		error
-	}
+    return {
+        items,
+        loading: isLoading,
+        error
+    }
 }
 
 export function useLatestBlog() {
