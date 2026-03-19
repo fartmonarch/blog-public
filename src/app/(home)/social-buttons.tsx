@@ -159,6 +159,21 @@ export default function SocialButtons() {
 			)
 		}
 
+		if (button.type === 'steam') {
+			return (
+				<motion.a
+					key={button.id}
+					href={button.value}
+					target='_blank'
+					{...commonProps}
+					className={`font-averia relative flex items-center gap-2 rounded-xl border bg-[#070707] text-xl text-white whitespace-nowrap ${!hasLabel ? 'p-1.5' : 'px-3 py-1.5'}`}
+					style={{ boxShadow: ' inset 0 0 12px rgba(255, 255, 255, 0.4)' }}>
+					<Icon className={'size-8'} />
+					{hasLabel ? button.label : button.value}
+				</motion.a>
+			)
+		}
+
 		if (button.type === 'email' || button.type === 'wechat' || button.type === 'qq') {
 			const messageMap: Record<'email' | 'wechat' | 'qq', string> = {
 				email: '邮箱已复制到剪贴板',
