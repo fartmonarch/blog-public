@@ -56,13 +56,6 @@
 			"order": 2
 		},
 		{
-			"id": "button-1773821526134",
-			"type": "wechat",
-			"value": "guo2639555042",
-			"label": "",
-			"order": 3
-		},
-		{
 			"id": "github",
 			"type": "github",
 			"value": "https://github.com/fartmonarch",
