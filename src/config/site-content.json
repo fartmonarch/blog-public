@@ -61,6 +61,13 @@
 			"value": "https://github.com/fartmonarch",
 			"label": "Github",
 			"order": 3
+		},
+		{
+			"id": "button-1773895040427",
+			"type": "link",
+			"value": "https://steamcommunity.com/profiles/76561199195080710/",
+			"label": "Steam",
+			"order": 4
 		}
 	],
 	"clockShowSeconds": false,
