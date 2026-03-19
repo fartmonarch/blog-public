@@ -44,3 +44,9 @@ next-env.d.ts
 
 #vscode
 .history/
+
+#云服务器上的脚本
+deploy.sh
+deploy.log
+# git hooks
+hooks.json
