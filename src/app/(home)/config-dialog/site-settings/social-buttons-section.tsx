@@ -23,6 +23,7 @@ type SocialButtonType =
 	| 'zhihu'
 	| 'bilibili'
 	| 'qq'
+	| 'steam'
 
 interface SocialButtonConfig {
 	id: string
@@ -167,6 +168,7 @@ export function SocialButtonsSection({ formData, setFormData, socialButtonImageU
 								{ value: 'zhihu', label: '知乎' },
 								{ value: 'bilibili', label: '哔哩哔哩' },
 								{ value: 'qq', label: 'QQ' },
+								{ value: 'steam', label: 'Steam' },
 								{ value: 'link', label: '链接' }
 							]}
 						/>
