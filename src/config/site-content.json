@@ -49,24 +49,24 @@
 			"order": 1
 		},
 		{
+			"id": "button-1773895040427",
+			"type": "link",
+			"value": "https://steamcommunity.com/profiles/76561199195080710/",
+			"label": "Steam",
+			"order": 2
+		},
+		{
 			"id": "button-1773821526134",
 			"type": "wechat",
 			"value": "guo2639555042",
 			"label": "",
-			"order": 2
+			"order": 3
 		},
 		{
 			"id": "github",
 			"type": "github",
 			"value": "https://github.com/fartmonarch",
 			"label": "Github",
-			"order": 3
-		},
-		{
-			"id": "button-1773895040427",
-			"type": "link",
-			"value": "https://steamcommunity.com/profiles/76561199195080710/",
-			"label": "Steam",
 			"order": 4
 		}
 	],
