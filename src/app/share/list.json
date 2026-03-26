@@ -202,5 +202,35 @@
 			"下载工具"
 		],
 		"stars": 5
+	},
+	{
+		"name": "Neocities",
+		"logo": "https://neocities.org/img/cat.png",
+		"url": "https://neocities.org/",
+		"description": "Neocities 是一个由 1,535,600 个网站组成的社交网络，正在重新带回网络中失落的个人创造力。我们提供免费的静态网站托管和工具。可以推荐给朋友",
+		"tags": [
+			"建站"
+		],
+		"stars": 4
+	},
+	{
+		"name": "Grid Gardem",
+		"logo": "https://cssgridgarden.com/images/carrots.svg",
+		"url": "https://cssgridgarden.com/#zh-cn",
+		"description": "一个用来学习CSS Grid的游戏",
+		"tags": [
+			"学习"
+		],
+		"stars": 3
+	},
+	{
+		"name": "在线图片颜色提取",
+		"logo": "https://www.lddgo.net/img/icon.png",
+		"url": "https://www.lddgo.net/image/color-picker",
+		"description": "一个在线提取图片颜色的工具",
+		"tags": [
+			"图片"
+		],
+		"stars": 3
 	}
 ]
