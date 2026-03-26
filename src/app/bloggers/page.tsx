@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'motion/react'
 import { toast } from 'sonner'
-import GridView, { type Blogger } from './grid-view'
+import GridView, { type Blogger, type BloggerStatus } from './grid-view'
 import CreateDialog from './components/create-dialog'
 import { pushBloggers } from './services/push-bloggers'
 import { useAuthStore } from '@/hooks/use-auth'
@@ -16,6 +16,7 @@ export default function Page() {
 	const [originalBloggers, setOriginalBloggers] = useState<Blogger[]>(initialList as Blogger[])
 	const [isEditMode, setIsEditMode] = useState(false)
 	const [isSaving, setIsSaving] = useState(false)
+	const [selectedCategory, setSelectedCategory] = useState<BloggerStatus>('recent')
 	const [editingBlogger, setEditingBlogger] = useState<Blogger | null>(null)
 	const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false)
 	const [avatarItems, setAvatarItems] = useState<Map<string, AvatarItem>>(new Map())
@@ -133,7 +134,14 @@ export default function Page() {
 				}}
 			/>
 
-			<GridView bloggers={bloggers} isEditMode={isEditMode} onUpdate={handleUpdate} onDelete={handleDelete} />
+			<GridView
+				bloggers={bloggers}
+				selectedCategory={selectedCategory}
+				onCategoryChange={setSelectedCategory}
+				isEditMode={isEditMode}
+				onUpdate={handleUpdate}
+				onDelete={handleDelete}
+			/>
 
 			<motion.div initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} className='absolute top-4 right-6 flex gap-3 max-sm:hidden'>
 				{isEditMode ? (
@@ -170,7 +178,14 @@ export default function Page() {
 				)}
 			</motion.div>
 
-			{isCreateDialogOpen && <CreateDialog blogger={editingBlogger} onClose={() => setIsCreateDialogOpen(false)} onSave={handleSaveBlogger} />}
+			{isCreateDialogOpen && (
+				<CreateDialog
+					blogger={editingBlogger}
+					defaultStatus={selectedCategory}
+					onClose={() => setIsCreateDialogOpen(false)}
+					onSave={handleSaveBlogger}
+				/>
+			)}
 		</>
 	)
 }

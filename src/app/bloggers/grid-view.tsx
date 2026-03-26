@@ -24,14 +24,15 @@ export interface Blogger {
 
 interface GridViewProps {
 	bloggers: Blogger[]
+	selectedCategory: BloggerStatus
+	onCategoryChange: (status: BloggerStatus) => void
 	isEditMode?: boolean
 	onUpdate?: (blogger: Blogger, oldBlogger: Blogger, avatarItem?: AvatarItem) => void
 	onDelete?: (blogger: Blogger) => void
 }
 
-export default function GridView({ bloggers, isEditMode = false, onUpdate, onDelete }: GridViewProps) {
+export default function GridView({ bloggers, selectedCategory, onCategoryChange, isEditMode = false, onUpdate, onDelete }: GridViewProps) {
 	const [searchTerm, setSearchTerm] = useState('')
-	const [selectedCategory, setSelectedCategory] = useState<BloggerStatus>('recent')
 
 	const filteredBloggers = bloggers.filter(blogger => {
 		const status = blogger.status ?? 'recent'
@@ -56,7 +57,7 @@ export default function GridView({ bloggers, isEditMode = false, onUpdate, onDel
 					{STATUS_OPTIONS.map(option => (
 						<button
 							key={option.value}
-							onClick={() => setSelectedCategory(option.value)}
+							onClick={() => onCategoryChange(option.value)}
 							className={`rounded-full px-4 py-1.5 text-sm transition-colors ${
 								selectedCategory === option.value ? 'bg-brand text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
 							}`}>
