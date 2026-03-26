@@ -12,7 +12,7 @@ import AvatarUploadDialog, { type AvatarItem } from './avatar-upload-dialog'
 const STATUS_OPTIONS: { value: BloggerStatus; label: string }[] = [
 	{ value: 'recent', label: '近期更新' },
 	{ value: 'disconnected', label: '长期失联' },
-	{ value: 'Friends', label: '友链' }
+	{ value: 'Friends', label: '友情链接' }
 ]
 
 interface BloggerCardProps {
