@@ -232,5 +232,15 @@
 			"图片"
 		],
 		"stars": 3
+	},
+	{
+		"name": "一个组件库",
+		"logo": "https://media.thuvien.org/navnav/article/1167/image/60c90a2b629a22709fea5bc55e62ac80.png",
+		"url": "https://thuvien.org/navnav",
+		"description": "一个大佬blog里面的公开组件库",
+		"tags": [
+			"工具"
+		],
+		"stars": 3
 	}
 ]
