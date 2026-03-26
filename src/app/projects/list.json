@@ -1,1 +1,13 @@
-[]
+[
+	{
+		"name": "Focus-todo",
+		"year": 2026,
+		"image": "blob:https://fartmonarch.xyz/7470fd62-66f9-495c-b09a-189f6a78a867",
+		"url": "todo.fartmonarch.xyz",
+		"description": "可运行在微信小程序端的 uni-app 项目,并且做了web端(H5)和移动端的适配 微信小程序正在审核中",
+		"tags": [
+			"Vue3+uni-app"
+		],
+		"github": "https://github.com/fartmonarch/focus-todo"
+	}
+]
