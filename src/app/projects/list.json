@@ -2,7 +2,7 @@
 	{
 		"name": "Focus-todo",
 		"year": 2026,
-		"image": "https://www.bing.com/ck/a?!&&p=73898f978951a11d502307975a276520fa8641ccf90b107e18a460435c8bb088JmltdHM9MTc3NDM5NjgwMA&ptn=3&ver=2&hsh=4&fclid=1cb3175d-3f01-69a8-2d4c-004b3e40689c&u=a1L2ltYWdlcy9zZWFyY2g_cT0lZTclOTUlYWElZTglOGMlODQlZTUlOWIlYmUlZTYlYTAlODcmaWQ9RjkyRkYwODVCOUM0NTA1Qzc3MTk2NEM1NjE2NzJENDZCNTdBNzQwRCZGT1JNPUlBQ0ZJUg&ntb=1",
+		"image": "https://todo.fartmonarch.xyz/static/timer.png",
 		"url": "https://todo.fartmonarch.xyz/#/",
 		"description": "可运行在微信小程序端的 uni-app 项目,并且做了web端(H5)和移动端的适配 微信小程序正在审核中",
 		"tags": [
