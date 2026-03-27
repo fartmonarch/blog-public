@@ -45,9 +45,14 @@ export function useMarkdownRender(markdown: string): MarkdownRenderResult {
 					// Parse HTML and replace img elements and code block placeholders
 					const options: HTMLReactParserOptions = {
 						replace(domNode: DOMNode) {
-							if (domNode instanceof Element && domNode.name === 'img') {
-								const { src, alt, title } = domNode.attribs
-								return <MarkdownImage src={src} alt={alt} title={title} />
+							if (domNode instanceof Element) {
+								if (['style', 'script', 'link', 'meta'].includes(domNode.name)) {
+									return <></>
+								}
+								if (domNode.name === 'img') {
+									const { src, alt, title } = domNode.attribs
+									return <MarkdownImage src={src} alt={alt} title={title} />
+								}
 							}
 							// Handle code block placeholders in text nodes
 							if (domNode.type === 'text' && domNode.data && domNode.data.includes('__CODE_BLOCK_')) {

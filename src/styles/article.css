@@ -16,24 +16,27 @@
 	line-height: 1.25;
 	margin-top: 2em;
 	margin-bottom: 1.5em;
-
+}
+.prose h1 {
+	font-size: 1.75rem;
 	&::before {
 		content: '# ';
 		@apply text-brand/60;
 	}
 }
-.prose h1 {
-	font-size: 1.75rem;
-}
 .prose h2 {
 	font-size: 1.25rem;
+	&::before {
+		content: '## ';
+		@apply text-brand/60;
+	}
 }
 .prose h3 {
 	font-size: 1rem;
 	font-weight: 600;
 
 	&::before {
-		content: '## ';
+		content: '### ';
 		@apply text-brand/60;
 	}
 }
@@ -41,7 +44,7 @@
 	font-size: 0.85rem;
 	font-weight: 500;
 	&::before {
-		content: '### ';
+		content: '#### ';
 		@apply text-brand/60;
 	}
 }
@@ -49,7 +52,7 @@
 	font-size: 0.75rem;
 	font-weight: 500;
 	&::before {
-		content: '#### ';
+		content: '##### ';
 		@apply text-brand/60;
 	}
 }
