@@ -47,6 +47,9 @@ export function useMarkdownRender(markdown: string): MarkdownRenderResult {
 						replace(domNode: DOMNode) {
 							if (domNode instanceof Element) {
 								if (['style', 'script', 'link', 'meta'].includes(domNode.name)) {
+									if (typeof domNode.attribs['data-raw'] !== 'undefined') {
+										return undefined // 放行带有 data-raw 属性的标签
+									}
 									return <></>
 								}
 								if (domNode.name === 'img') {
