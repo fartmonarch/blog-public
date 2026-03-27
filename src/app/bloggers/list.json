@@ -29,14 +29,6 @@
 		"stars": 5
 	},
 	{
-		"name": "Emil Kowalski",
-		"url": "https://emilkowal.ski/",
-		"avatar": "https://emilkowal.ski/favicon.ico",
-		"description": "Blog 就干脆\"不设计\"，无装饰。技术就比较轻松一些，它更强调动画/交互。Vercel 员工，他的组件很好用，也很 vercel。",
-		"stars": 4,
-		"status": "disconnected"
-	},
-	{
 		"name": "Risingle",
 		"url": "https://www.imrising.cn/",
 		"avatar": "https://www.imrising.cn/images/logo/logo.webp",
@@ -265,5 +257,29 @@
 		"url": "https://blog.dumogu.top/",
 		"description": "前端开发，页面小巧，结构简单，寻常记录",
 		"stars": 3
+	},
+	{
+		"name": "Jokerlove",
+		"avatar": "https://avatars.cdn.queniuqe.com/8cdc71f048cde50318b3abc77fbe0e0a3249c746_medium.jpg",
+		"url": "https://jokerlove0626.github.io/",
+		"description": "牢典 大雪深埋混子本科",
+		"stars": 5,
+		"status": "Friends"
+	},
+	{
+		"name": "Bigpeter",
+		"avatar": "https://tse3.mm.bing.net/th/id/OIP.Hn1Lu_Heece5nvrHoxmb_gHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+		"url": "https://bigpeter.top/",
+		"description": "大皮特的网站还在开发中...",
+		"stars": 5,
+		"status": "Friends"
+	},
+	{
+		"name": "evanescent",
+		"avatar": "https://avatars.cdn.queniuqe.com/1191c81a57194f64acfcda94f0fd0cb94e92eff7_medium.jpg",
+		"url": "https://evanescent521.github.io",
+		"description": "evanescent的网站还在开发中...",
+		"stars": 5,
+		"status": "Friends"
 	}
 ]

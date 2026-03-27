@@ -5,44 +5,40 @@ import { toast } from 'sonner'
 import { Plus } from 'lucide-react'
 import AvatarUploadDialog, { type AvatarItem } from './avatar-upload-dialog'
 import { DialogModal } from '@/components/dialog-modal'
-
-interface Blogger {
-	name: string
-	avatar: string
-	url: string
-	description: string
-	stars: number
-}
+import { type Blogger, type BloggerStatus } from '../grid-view'
 
 interface CreateDialogProps {
 	blogger: Blogger | null
+	defaultStatus: BloggerStatus
 	onClose: () => void
 	onSave: (blogger: Blogger) => void
 }
 
-export default function CreateDialog({ blogger, onClose, onSave }: CreateDialogProps) {
+export default function CreateDialog({ blogger, defaultStatus, onClose, onSave }: CreateDialogProps) {
 	const [formData, setFormData] = useState<Blogger>({
 		name: '',
 		avatar: '',
 		url: '',
 		description: '',
-		stars: 3
+		stars: 3,
+		status: defaultStatus
 	})
 	const [showAvatarDialog, setShowAvatarDialog] = useState(false)
 
 	useEffect(() => {
 		if (blogger) {
-			setFormData(blogger)
+			setFormData({ ...blogger, status: blogger.status ?? defaultStatus })
 		} else {
 			setFormData({
 				name: '',
 				avatar: '',
 				url: '',
 				description: '',
-				stars: 3
+				stars: 3,
+				status: defaultStatus
 			})
 		}
-	}, [blogger])
+	}, [blogger, defaultStatus])
 
 	const handleAvatarSubmit = (avatar: AvatarItem) => {
 		const avatarUrl = avatar.type === 'url' ? avatar.url : avatar.previewUrl

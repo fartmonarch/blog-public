@@ -71,21 +71,19 @@ export async function renderMarkdown(markdown: string): Promise<MarkdownRenderRe
 	}
 
 	renderer.code = (token: Tokens.Code) => {
+		const escapeHtml = (str: string) => str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;')
 		// Check if this code block was pre-processed
 		const codeData = codeBlockMap.get(token.text)
-		if (codeData) {
-			// Add data-code attribute with original code for copy functionality
-			// Escape HTML entities for attribute value
-			const escapedCode = codeData.original.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-			if (codeData.html) {
-				// Shiki highlighted code
-				return `<pre data-code="${escapedCode}">${codeData.html}</pre>`
-			}
-			// Fallback for failed highlighting
-			return `<pre data-code="${escapedCode}"><code>${codeData.original}</code></pre>`
+		const originalText = codeData ? codeData.original : token.text
+		const escapedCode = escapeHtml(originalText)
+
+		if (codeData && codeData.html) {
+			// Shiki highlighted code
+			return `<pre data-code="${escapedCode}">${codeData.html}</pre>`
 		}
-		// Fallback to default (inline code, not code block)
-		return `<code>${token.text}</code>`
+
+		// Fallback for un-processed code blocks or failed highlighting
+		return `<pre data-code="${escapedCode}"><code>${escapedCode}</code></pre>`
 	}
 
 	renderer.listitem = (token: Tokens.ListItem) => {
@@ -201,30 +199,39 @@ export async function renderMarkdown(markdown: string): Promise<MarkdownRenderRe
 	extractHeadings(tokens)
 
 	// Pre-process code blocks with Shiki
-	for (const token of tokens) {
-		if (token.type === 'code') {
-			const codeToken = token as Tokens.Code
-			const originalCode = codeToken.text
-			const key = `__SHIKI_CODE_${codeBlockMap.size}__`
+	const codeTokens: Tokens.Code[] = []
+	function collectCodeTokens(tokenList: any[]) {
+		for (const token of tokenList) {
+			if (token.type === 'code') {
+				codeTokens.push(token as Tokens.Code)
+			}
+			if (token.tokens) collectCodeTokens(token.tokens)
+			if (token.items) collectCodeTokens(token.items)
+		}
+	}
+	collectCodeTokens(tokens)
 
-			if (shiki) {
-				try {
-					const html = await shiki.codeToHtml(originalCode, {
-						lang: codeToken.lang || 'text',
-						theme: 'one-light'
-					})
-					codeBlockMap.set(key, { html, original: originalCode })
-					codeToken.text = key
-				} catch {
-					// Keep original if highlighting fails
-					codeBlockMap.set(key, { html: '', original: originalCode })
-					codeToken.text = key
-				}
-			} else {
-				// Fallback when shiki is not available
+	for (const codeToken of codeTokens) {
+		const originalCode = codeToken.text
+		const key = `__SHIKI_CODE_${codeBlockMap.size}__`
+
+		if (shiki) {
+			try {
+				const html = await shiki.codeToHtml(originalCode, {
+					lang: codeToken.lang || 'text',
+					theme: 'one-light'
+				})
+				codeBlockMap.set(key, { html, original: originalCode })
+				codeToken.text = key
+			} catch {
+				// Keep original if highlighting fails
 				codeBlockMap.set(key, { html: '', original: originalCode })
 				codeToken.text = key
 			}
+		} else {
+			// Fallback when shiki is not available
+			codeBlockMap.set(key, { html: '', original: originalCode })
+			codeToken.text = key
 		}
 	}
 	const html = (marked.parser(tokens) as string) || ''

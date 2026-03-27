@@ -9,6 +9,12 @@ import { Blogger, type BloggerStatus } from '../grid-view'
 import { useState } from 'react'
 import AvatarUploadDialog, { type AvatarItem } from './avatar-upload-dialog'
 
+const STATUS_OPTIONS: { value: BloggerStatus; label: string }[] = [
+	{ value: 'recent', label: '近期更新' },
+	{ value: 'disconnected', label: '长期失联' },
+	{ value: 'Friends', label: '友情链接' }
+]
+
 interface BloggerCardProps {
 	blogger: Blogger
 	isEditMode?: boolean
@@ -126,15 +132,15 @@ export function BloggerCard({ blogger, isEditMode = false, onUpdate, onDelete }:
 
 				{canEdit && (
 					<div className='mt-2 flex gap-2'>
-						{(['recent', 'disconnected'] as BloggerStatus[]).map(status => (
+						{STATUS_OPTIONS.map(option => (
 							<button
-								key={status}
+								key={option.value}
 								type='button'
-								onClick={() => handleFieldChange('status', status)}
+								onClick={() => handleFieldChange('status', option.value)}
 								className={`rounded-full px-3 py-1 text-xs transition-colors ${
-									(localBlogger.status ?? 'recent') === status ? 'bg-brand text-white' : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+									(localBlogger.status ?? 'recent') === option.value ? 'bg-brand text-white' : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
 								}`}>
-								{status === 'recent' ? '近期更新' : '长期失联'}
+								{option.label}
 							</button>
 						))}
 					</div>

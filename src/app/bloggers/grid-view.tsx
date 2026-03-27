@@ -5,7 +5,13 @@ import { useState } from 'react'
 import { type AvatarItem } from './components/avatar-upload-dialog'
 import { BloggerCard } from './components/blogger-card'
 
-export type BloggerStatus = 'recent' | 'disconnected'
+export type BloggerStatus = 'recent' | 'disconnected' | 'Friends'
+
+const STATUS_OPTIONS: { value: BloggerStatus; label: string }[] = [
+	{ value: 'recent', label: '近期更新' },
+	{ value: 'disconnected', label: '长期失联' },
+	{ value: 'Friends', label: '友情链接' }
+]
 
 export interface Blogger {
 	name: string
@@ -18,14 +24,15 @@ export interface Blogger {
 
 interface GridViewProps {
 	bloggers: Blogger[]
+	selectedCategory: BloggerStatus
+	onCategoryChange: (status: BloggerStatus) => void
 	isEditMode?: boolean
 	onUpdate?: (blogger: Blogger, oldBlogger: Blogger, avatarItem?: AvatarItem) => void
 	onDelete?: (blogger: Blogger) => void
 }
 
-export default function GridView({ bloggers, isEditMode = false, onUpdate, onDelete }: GridViewProps) {
+export default function GridView({ bloggers, selectedCategory, onCategoryChange, isEditMode = false, onUpdate, onDelete }: GridViewProps) {
 	const [searchTerm, setSearchTerm] = useState('')
-	const [selectedCategory, setSelectedCategory] = useState<BloggerStatus>('recent')
 
 	const filteredBloggers = bloggers.filter(blogger => {
 		const status = blogger.status ?? 'recent'
@@ -47,20 +54,16 @@ export default function GridView({ bloggers, isEditMode = false, onUpdate, onDel
 				/>
 
 				<div className='flex flex-wrap justify-center gap-2'>
-					<button
-						onClick={() => setSelectedCategory('recent')}
-						className={`rounded-full px-4 py-1.5 text-sm transition-colors ${
-							selectedCategory === 'recent' ? 'bg-brand text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-						}`}>
-						近期更新
-					</button>
-					<button
-						onClick={() => setSelectedCategory('disconnected')}
-						className={`rounded-full px-4 py-1.5 text-sm transition-colors ${
-							selectedCategory === 'disconnected' ? 'bg-brand text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-						}`}>
-						长期失联
-					</button>
+					{STATUS_OPTIONS.map(option => (
+						<button
+							key={option.value}
+							onClick={() => onCategoryChange(option.value)}
+							className={`rounded-full px-4 py-1.5 text-sm transition-colors ${
+								selectedCategory === option.value ? 'bg-brand text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+							}`}>
+							{option.label}
+						</button>
+					))}
 				</div>
 			</div>
 
