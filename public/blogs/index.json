@@ -1,5 +1,18 @@
 [
   {
+    "slug": "Nginx1",
+    "title": "Nginx学习笔记",
+    "tags": [
+      "Nginx",
+      "后端技术"
+    ],
+    "date": "2026-03-21T23:12",
+    "summary": "部署博客时用到了这个技术想学习一下",
+    "cover": "https://nginx.org/img/nginx_logo.svg",
+    "hidden": false,
+    "category": "学习笔记"
+  },
+  {
     "slug": "my_first_blog",
     "title": "我的博客创建和运行的框架",
     "tags": [],
