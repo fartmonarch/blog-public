@@ -20,5 +20,18 @@
 			"Vue3，Elements，echarts，axios"
 		],
 		"github": "https://github.com/fartmonarch/Tunnel_management_system"
+	},
+	{
+		"name": "复古游戏博物馆",
+		"year": 2025,
+		"image": "https://tse4-mm.cn.bing.net/th/id/OIP-C.vfgyi_hftdZn1MZ_OS3jtwHaHa?w=167&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
+		"url": "#",
+		"description": "本项目是一个基于 Vue 3 + Vite 搭建的复古风格游戏展示平台，融合了游戏时间轴、排行榜、游戏选择、用户头像管理、社区讨论等功能模块，页面风格参考 8-bit 像素设计 当时结合GPT设计的首页",
+		"tags": [
+			"Vue3",
+			"Vite",
+			"CSS3"
+		],
+		"github": "https://gitee.com/MOcoke/retro-game-museum"
 	}
 ]
