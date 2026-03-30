@@ -17,7 +17,7 @@
 		"url": "https://happycoke.dpdns.org",
 		"description": "包含：项目隧道基本信息、隧道设计信息、工作监督管理、施工监控检测、超前地质预报和系统信息管理等功能。使用了一些第三方插件帮助完成项目，例如：i18n国际化和Echarts图表等。测试账号 admin 123456",
 		"tags": [
-			"Vue3，Elements，echarts，axios"
+			"Vue3，Elements，echarts，axios，Typescript"
 		],
 		"github": "https://github.com/fartmonarch/Tunnel_management_system"
 	},
@@ -26,7 +26,7 @@
 		"year": 2025,
 		"image": "https://tse4-mm.cn.bing.net/th/id/OIP-C.vfgyi_hftdZn1MZ_OS3jtwHaHa?w=167&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
 		"url": "#",
-		"description": "本项目是一个基于 Vue 3 + Vite 搭建的复古风格游戏展示平台，融合了游戏时间轴、排行榜、游戏选择、用户头像管理、社区讨论等功能模块，页面风格参考 8-bit 像素设计 当时结合GPT设计的首页",
+		"description": "本项目是一个基于 Vue 3 + Vite 搭建的复古风格游戏展示平台，融合了游戏时间轴、排行榜、线上游戏、社区讨论等功能模块，页面风格参考 8-bit 像素设计 当时结合GPT设计的首页，当时是第一个练手项目，接口写的比较随意，所以上线有点困难了😭",
 		"tags": [
 			"Vue3",
 			"Vite",
