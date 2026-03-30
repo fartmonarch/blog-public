@@ -9,5 +9,16 @@
 			"Vue3+uni-app"
 		],
 		"github": "https://github.com/fartmonarch/focus-todo"
+	},
+	{
+		"name": "智慧隧道运维可视化管理平台",
+		"year": 2026,
+		"image": "blob:https://fartmonarch.xyz/8340286a-120d-4c8b-a11b-fecd4c1f37b6",
+		"url": "https://happycoke.dpdns.org",
+		"description": "包含：项目隧道基本信息、隧道设计信息、工作监督管理、施工监控检测、超前地质预报和系统信息管理等功能。使用了一些第三方插件帮助完成项目，例如：i18n国际化和Echarts图表等。测试账号 admin 123456",
+		"tags": [
+			"Vue3，Elements，echarts，axios"
+		],
+		"github": "https://github.com/fartmonarch/Tunnel_management_system"
 	}
 ]
