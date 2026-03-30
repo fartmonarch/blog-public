@@ -13,7 +13,7 @@
 	{
 		"name": "智慧隧道运维可视化管理平台",
 		"year": 2026,
-		"image": "/images/project/c033b331c3827d6c.webp",
+		"image": "https://tse4.mm.bing.net/th/id/OIP.MoKEZwlGcSttXLhmyL9pPwHaE7?rs=1&pid=ImgDetMain&o=7&rm=3",
 		"url": "https://happycoke.dpdns.org",
 		"description": "包含：项目隧道基本信息、隧道设计信息、工作监督管理、施工监控检测、超前地质预报和系统信息管理等功能。使用了一些第三方插件帮助完成项目，例如：i18n国际化和Echarts图表等。测试账号 admin 123456",
 		"tags": [
