@@ -81,5 +81,17 @@
     "cover": "https://haowallpaper.com/link/common/file/getCroppingImg/17226423570255232",
     "hidden": false,
     "category": "学习笔记"
+  },
+  {
+    "slug": "ES6语法糖",
+    "title": "ES6语法糖",
+    "tags": [
+      "ES6"
+    ],
+    "date": "2025-03-05T19:10",
+    "summary": "记录一下这两天学习的ES6",
+    "cover": "https://www.runoob.com/wp-content/uploads/2017/08/20130807-es6-e1420205362328.png",
+    "hidden": false,
+    "category": "学习笔记"
   }
 ]
