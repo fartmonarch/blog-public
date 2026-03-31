@@ -83,6 +83,18 @@
     "category": "学习笔记"
   },
   {
+    "slug": "Vue3指令",
+    "title": "Vue3指令",
+    "tags": [
+      "Vue"
+    ],
+    "date": "2025-03-27T20:48",
+    "summary": "记录一下几个Vue的指令",
+    "cover": "https://ts2.tc.mm.bing.net/th/id/OIP-C.gLG-t0YEImOmSzJdHALL5wHaEB?rs=1&pid=ImgDetMain&o=7&rm=3",
+    "hidden": false,
+    "category": "开源"
+  },
+  {
     "slug": "ES6语法糖",
     "title": "ES6语法糖",
     "tags": [
