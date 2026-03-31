@@ -47,6 +47,18 @@
     "category": "总结"
   },
   {
+    "slug": "DNS_1",
+    "title": " DNS浅解",
+    "tags": [
+      "计算机网络"
+    ],
+    "date": "2025-10-03T10:44",
+    "summary": "经常遇到这个DNS，了解一下",
+    "cover": "/blogs/DNS_1/64bd846b29d88cda.webp",
+    "hidden": false,
+    "category": "学习笔记"
+  },
+  {
     "slug": "jQuery学习笔记",
     "title": "jQuery学习笔记",
     "tags": [
