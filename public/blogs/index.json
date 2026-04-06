@@ -1,5 +1,16 @@
 [
   {
+    "slug": "Event Loop",
+    "title": "Event Loop",
+    "tags": [
+      "八股"
+    ],
+    "date": "2026-04-03T15:02",
+    "summary": "记录一下js面试高频考点",
+    "hidden": false,
+    "category": "学习笔记"
+  },
+  {
     "slug": "Ai概念大串联",
     "title": "Ai概念大串联",
     "tags": [
