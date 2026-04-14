@@ -1,0 +1,11 @@
+{
+  "title": "# 浏览器渲染流水线全解析：从 HTML 到屏幕的 5 个核心阶段",
+  "tags": [
+    "浏览器"
+  ],
+  "date": "2025-12-09T14:45",
+  "summary": "记录一下学习浏览器渲染原理的笔记",
+  "cover": "https://www.runoob.com/wp-content/uploads/2013/09/ct_htmltree.gif",
+  "hidden": false,
+  "category": "学习笔记"
+}
